@@ -87,7 +87,6 @@ svg {
   grid-template-columns: 3fr 1fr;
   align-items: end;
   padding-left: 1rem;
-  border: 1px solid red;
   grid-area: content-header;
 }
 
@@ -102,12 +101,10 @@ svg {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(3, 1fr);
-  border: 1px solid red;
   grid-area: projects;
 }
 
 .announce {
-  border: 1px solid red;
   grid-area: announce;
 }
 
@@ -156,5 +153,30 @@ svg {
 }
 
 .announce {
+  padding: 1rem;
   display: grid;
+  grid-template-rows: 6fr 1fr 5fr;
+}
+
+.announcements, .trends {
+  border-radius: 1rem;
+  background-color: #000000;
+}
+
+.announce h3 {
+  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #ffffff;
+  align-self: end;
+}
+
+.announcements h4, .announcements p {
+  color: #ffffff;
+}
+
+.announcements {
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr 3fr 1fr 3fr ;
+  align-items: center;
+  padding: 1rem;
 }
