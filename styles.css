@@ -1,0 +1,160 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0c0a09;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3.75fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas: 'sidebar header'
+                       'sidebar content';
+}
+
+.sidebar {
+  display: grid;
+  grid-area: sidebar;
+  background-color: #d946ef;
+}
+
+.header {
+  height: 20vh;
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr 20fr 0.75fr;
+  grid-template-areas: 'content-header content-header'
+                        'projects announce'
+                        'content-footer content-footer';
+  background-color: #292524;
+}
+
+.sidebar-item {
+  padding:1rem;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  background-color: #d946ef;
+}
+
+.sidebar-item a {
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;padding-left: 1rem;
+  
+
+}
+
+svg {
+  margin-left: 0.75rem;
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.sidebar-item svg:first-of-type {
+  margin: 0;
+  height: 4rem;
+  width: 4rem;
+}
+
+.sidebar-item a:first-of-type {
+  padding-top: 0.85rem;
+  font-size:1.5rem;
+}
+
+.content-header {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: end;
+  padding-left: 1rem;
+  border: 1px solid red;
+  grid-area: content-header;
+}
+
+.content-header p {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.projects {
+  padding: 1rem;
+  gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  border: 1px solid red;
+  grid-area: projects;
+}
+
+.announce {
+  border: 1px solid red;
+  grid-area: announce;
+}
+
+.content-footer {
+  grid-area: content-footer;
+}
+
+.project {
+  display: grid;
+  grid-template-rows: 1fr 7fr 1fr;
+  position: relative;
+  border-radius: 1rem;
+  background-color: #000000;
+  padding: 1rem; /* Adjust to create space for content */
+  overflow: hidden; /* Ensures the pseudo-element does not overflow */
+}
+
+.project::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 5px;
+  background-color: yellow;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;  /* took the help of ChatGPT here */
+}
+
+.project h3, .project p {
+  color: #ffffff;
+
+}
+
+.icons {
+  /* border: 1px solid blue; */
+  align-self: baseline;
+  display: grid;
+  grid-template-columns:3fr 1fr 1fr 1fr;
+}
+
+.project img {
+  fill: #ffffff;
+  height: 2rem;
+  width: 2rem;
+}
+
+.announce {
+  display: grid;
+}
